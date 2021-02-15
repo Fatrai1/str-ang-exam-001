@@ -6,21 +6,36 @@ import { RouterModule, Routes } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
-
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 const appRoutes: Routes = [
   {
     path:"",
+    component: HomeComponent
+  },
+  {
+    path: "heroes",
+    component: HeroesComponent
+  },
+  {
+    path: "**",
+    component: HomeComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

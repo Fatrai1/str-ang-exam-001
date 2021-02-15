@@ -5,12 +5,16 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+  {
+    path:"",
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

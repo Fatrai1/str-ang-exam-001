@@ -1,0 +1,8 @@
+export class Hero {
+  constructor(
+    public id: number,
+    public name: string,
+    public superPower: string,
+    public address: string,
+  ){}
+}

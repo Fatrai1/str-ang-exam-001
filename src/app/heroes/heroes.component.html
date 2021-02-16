@@ -1,1 +1,25 @@
-<p>heroes works!</p>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>superPowe</th>
+          <th>address</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroList | async">
+          <td>{{ hero.id }}</td>
+          <td>{{ hero.name }}</td>
+          <td>{{ hero.superPower }}</td>
+          <td>{{ hero.address }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

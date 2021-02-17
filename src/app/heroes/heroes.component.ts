@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { HeroService } from '../service/hero.service';
-import
+
 
 @Component({
   selector: 'app-heroes',
@@ -10,7 +10,7 @@ import
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-heroList: Observable<Hero[]>;
+list: BehaviorSubject<Hero[]>;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,9 +1,5 @@
-import { ThrowStmt } from '@angular/compiler';
-import { getAllLifecycleHooks } from '@angular/compiler/src/lifecycle_reflector';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
 
-import { HeroesComponent } from '../heroes/heroes.component';
 import { Hero } from '../model/hero'
 
 @Injectable({
@@ -11,13 +7,46 @@ import { Hero } from '../model/hero'
 })
 export class HeroService {
 
-
-  list$: BehaviorSubject<Hero[]> = new BehaviorSubject<Hero[]>([]);
+  list: Hero[] = [
+    {
+      "id": 1,
+      "name": "Thor",
+      "superPower": "Mjölnir",
+      "address": "Asgard"
+    },
+    {
+      "id": 2,
+      "name": "Loki",
+      "superPower": "prank",
+      "address": "Asgard"
+    },
+    {
+      "id": 3,
+      "name": "Groot",
+      "superPower": "tree",
+      "address": "universum"
+    },
+    {
+      "id": 4,
+      "name": "Amerika kapitány",
+      "superPower": "shild",
+      "address": "Föld"
+    },
+    {
+      "id": 5,
+      "name": "Vasember",
+      "superPower": "vas",
+      "address": "Föld"
+    },
+  ]
 
 
   constructor() { }
+
 }
 
- getAll(): void {
-   this.list$.next(this.list),
+ getAll(): Hero[]{
+  return (this.list.filter(item => item));
+ }
+
  };

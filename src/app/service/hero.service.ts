@@ -5,6 +5,7 @@ import { Hero } from '../model/hero'
 @Injectable({
   providedIn: 'root'
 })
+
 export class HeroService {
 
   list: Hero[] = [
@@ -38,15 +39,14 @@ export class HeroService {
       "superPower": "vas",
       "address": "Föld"
     },
-  ]
+  ];
 
 
   constructor() { }
 
-}
 
  getAll(): Hero[]{
   return (this.list.filter(item => item));
  }
 
- };
+ }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Component,Import, OnInit } from '@angular/core';
 
-import { HeroService } from '../service/hero.service';
+import { Hero } from "src/app/model/hero"
+import { HeroService } from 'src/app/service/hero.service';
 
 
 @Component({
@@ -9,11 +9,23 @@ import { HeroService } from '../service/hero.service';
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
-export class HeroesComponent implements OnInit {
-list: BehaviorSubject<Hero[]>;
-  constructor() { }
+export class HeroesComponent  implements OnInit {
+
+  filterPhrase: string = '';
+  filterKey: string = 'name';
+
+  sortby: string = 'id';
+  direction: number = 1;
+
+  heroes: Hero[] = this.heroService.getAll();
+  constructor(
+    private heroService: HeroService
+  ){}
 
   ngOnInit(): void {
   }
 
+  getSortProt(prop:string): void{
+    this.sortby = prop;
+  }
 }

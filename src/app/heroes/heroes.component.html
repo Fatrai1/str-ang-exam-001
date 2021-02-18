@@ -3,15 +3,15 @@
     <table>
       <thead>
         <tr>
-          <th>#</th>
-          <th>Name</th>
+          <th><button class="btn btn-outline-secondary" (click)="getSortProp('id')">id</button></th>
+          <th><button class="btn btn-outline-secondary" (click)="getSortProp('name')">Name</button></th>
           <th>superPowe</th>
           <th>address</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let hero of heroList | async">
+        <tr *ngFor="let hero of heroes | filter:filterPhrase:'name' | sorter:sortby:direction">
           <td>{{ hero.id }}</td>
           <td>{{ hero.name }}</td>
           <td>{{ hero.superPower }}</td>

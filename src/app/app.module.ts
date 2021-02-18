@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { Filter } from './pipe/filter.pipe.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 const appRoutes: Routes = [
   {
     path:"",
@@ -28,7 +30,9 @@ const appRoutes: Routes = [
     AppComponent,
     HeroesComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    Filter.PipePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

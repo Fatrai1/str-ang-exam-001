@@ -9,6 +9,11 @@ export class FilterPipe implements PipeTransform {
     if  (!Array.isArray(value) || !phrase || !fkey){
       return value;
     }
-  }
 
+    phrase = ('' + phrase).toLowerCase();
+    return value.filter( item => {
+      const strItem: string = ('' + item[fkey]).toLowerCase();
+      return strItem.includes(phrase);
+    });
+  }
 }
